@@ -8,10 +8,10 @@ script:
   - docker run ranjithcheguri/docker-react-express-test npm test -- --coverage 
 
 after_success:
-  - docker build ranjithcheguri/docker-react-express-client ./client/
-  - docker build ranjithcheguri/docker-react-express-server ./server/
-  - docker build ranjithcheguri/docker-react-express-nginx ./nginx/
-  - docker build ranjithcheguri/docker-react-express-worker ./worker/
+  - docker build -t ranjithcheguri/docker-react-express-client ./client/
+  - docker build -t ranjithcheguri/docker-react-express-server ./server/
+  - docker build -t ranjithcheguri/docker-react-express-nginx ./nginx/
+  - docker build -t ranjithcheguri/docker-react-express-worker ./worker/
 
   # Login to docker CLI, ID,password are stored in travis website environmental variables
 
