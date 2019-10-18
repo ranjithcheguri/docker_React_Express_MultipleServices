@@ -13,13 +13,13 @@ after_success:
   - docker build ranjithcheguri/docker-react-express-nginx ./nginx/
   - docker build ranjithcheguri/docker-react-express-worker ./worker/
 
-# Login to docker CLI, ID,password are stored in travis website environmental variables
+  # Login to docker CLI, ID,password are stored in travis website environmental variables
 
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-# push images to docker hub
+  # push images to docker hub
 
-- docker push ranjithcheguri/docker-react-express-client
-- docker push ranjithcheguri/docker-react-express-server
-- docker push ranjithcheguri/docker-react-express-nginx
-- docker push ranjithcheguri/docker-react-express-worker  
+  - docker push ranjithcheguri/docker-react-express-client
+  - docker push ranjithcheguri/docker-react-express-server
+  - docker push ranjithcheguri/docker-react-express-nginx
+  - docker push ranjithcheguri/docker-react-express-worker  
